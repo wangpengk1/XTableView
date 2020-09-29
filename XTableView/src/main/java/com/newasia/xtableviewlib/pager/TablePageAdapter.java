@@ -1,15 +1,13 @@
-package com.newasia.xtableview.pager;
+package com.newasia.xtableviewlib.pager;
 
 import android.content.Context;
 
-import androidx.databinding.DataBindingUtil;
-
-import com.newasia.xtableview.BaseTableAdapter;
-import com.newasia.xtableview.XTableConfig;
-import com.newasia.xtableview.XTableView;
-import com.newasia.xtableview.utils.DialogUtils;
-import com.newasia.xtableview.utils.SPUtils;
-import com.newasia.xtableview.utils.StringUtils;
+import com.newasia.xtableviewlib.BaseTableAdapter;
+import com.newasia.xtableviewlib.XTableConfig;
+import com.newasia.xtableviewlib.XTableView;
+import com.newasia.xtableviewlib.utils.DialogUtils;
+import com.newasia.xtableviewlib.utils.SPUtils;
+import com.newasia.xtableviewlib.utils.StringUtils;
 import com.newasia.xtoast.XToastUtil;
 
 import java.util.ArrayList;

@@ -1,7 +1,5 @@
-package com.newasia.xtableview;
+package com.newasia.xtableviewlib;
 
-import android.graphics.Color;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
@@ -10,10 +8,8 @@ import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.viewholder.BaseViewHolder;
 
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
-import java.util.List;
 
 class OtherColumnAdapter extends BaseQuickAdapter<ArrayList<String>, BaseViewHolder>
 {

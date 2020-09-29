@@ -1,4 +1,4 @@
-package com.newasia.xtableview.Excel;
+package com.newasia.xtableviewlib.Excel;
 
 import android.app.Activity;
 import android.content.Context;
@@ -7,7 +7,7 @@ import android.os.Build;
 
 import androidx.core.content.FileProvider;
 
-import com.newasia.xtableview.XTableConfig;
+import com.newasia.xtableviewlib.XTableConfig;
 import com.newasia.xtoast.XToastUtil;
 
 import java.io.File;

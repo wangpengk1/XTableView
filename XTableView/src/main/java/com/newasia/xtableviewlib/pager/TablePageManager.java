@@ -1,4 +1,4 @@
-package com.newasia.xtableview.pager;
+package com.newasia.xtableviewlib.pager;
 
 import android.os.Bundle;
 

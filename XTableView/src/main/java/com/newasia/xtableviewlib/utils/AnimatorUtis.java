@@ -1,4 +1,4 @@
-package com.newasia.xtableview.utils;
+package com.newasia.xtableviewlib.utils;
 
 import android.animation.Animator;
 import android.animation.AnimatorSet;

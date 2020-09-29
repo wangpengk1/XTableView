@@ -1,24 +1,23 @@
-package com.newasia.xtableview.pager;
+package com.newasia.xtableviewlib.pager;
 
 
 import android.view.View;
 import androidx.databinding.DataBindingUtil;
 
 import com.google.android.material.tabs.TabLayout;
-import com.newasia.xtableview.AnimatorGifDlg;
-import com.newasia.xtableview.Excel.ExcleSaveHelper;
-import com.newasia.xtableview.R;
-import com.newasia.xtableview.XTableConfig;
-import com.newasia.xtableview.databinding.TablePagerContainerBinding;
-import com.newasia.xtableview.utils.AnimatorUtis;
-import com.newasia.xtableview.utils.DialogUtils;
+import com.newasia.xtableviewlib.AnimatorGifDlg;
+import com.newasia.xtableviewlib.Excel.ExcleSaveHelper;
+import com.newasia.xtableviewlib.R;
+import com.newasia.xtableviewlib.XTableConfig;
+import com.newasia.xtableviewlib.databinding.TablePagerContainerBinding;
+import com.newasia.xtableviewlib.utils.AnimatorUtis;
+import com.newasia.xtableviewlib.utils.DialogUtils;
 import com.newasia.xtoast.XToastUtil;
 import com.xuexiang.xpage.annotation.Page;
 import com.xuexiang.xpage.base.XPageFragment;
 import com.xuexiang.xpage.utils.TitleBar;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 
 @Page(name = "统计详情")
 public class TablePagerContainer extends XPageFragment

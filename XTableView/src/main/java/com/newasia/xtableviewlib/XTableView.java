@@ -1,4 +1,4 @@
-package com.newasia.xtableview;
+package com.newasia.xtableviewlib;
 
 import android.content.Context;
 
@@ -17,7 +17,7 @@ import androidx.databinding.DataBindingUtil;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.newasia.xtableview.databinding.TableViewLayoutBinding;
+import com.newasia.xtableviewlib.databinding.TableViewLayoutBinding;
 import java.util.ArrayList;
 
 public class XTableView extends FrameLayout{

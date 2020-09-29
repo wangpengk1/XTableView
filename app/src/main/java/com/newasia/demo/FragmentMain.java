@@ -1,7 +1,7 @@
 package com.newasia.demo;
 
-import com.newasia.xtableview.demo.R;
-import com.newasia.xtableview.pager.TablePage;
+import com.newasia.xtableviewlib.demo.R;
+import com.newasia.xtableviewlib.pager.TablePage;
 import com.xuexiang.xpage.annotation.Page;
 import com.xuexiang.xpage.base.XPageFragment;
 import com.xuexiang.xpage.enums.CoreAnim;

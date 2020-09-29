@@ -1,9 +1,7 @@
-package com.newasia.xtableview.utils;
-import android.text.TextUtils;
+package com.newasia.xtableviewlib.utils;
 
 import androidx.annotation.NonNull;
 
-import java.io.File;
 import java.io.PrintWriter;
 import java.io.StringWriter;
 import java.text.DecimalFormat;

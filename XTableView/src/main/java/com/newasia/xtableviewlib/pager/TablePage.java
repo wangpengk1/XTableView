@@ -1,4 +1,4 @@
-package com.newasia.xtableview.pager;
+package com.newasia.xtableviewlib.pager;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -9,12 +9,12 @@ import android.widget.ProgressBar;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import com.newasia.xtableview.AnimatorGifDlg;
-import com.newasia.xtableview.R;
-import com.newasia.xtableview.XTableView;
-import com.newasia.xtableview.utils.AnimatorUtis;
-import com.newasia.xtableview.utils.SPUtils;
-import com.newasia.xtableview.utils.StringUtils;
+import com.newasia.xtableviewlib.AnimatorGifDlg;
+import com.newasia.xtableviewlib.R;
+import com.newasia.xtableviewlib.XTableView;
+import com.newasia.xtableviewlib.utils.AnimatorUtis;
+import com.newasia.xtableviewlib.utils.SPUtils;
+import com.newasia.xtableviewlib.utils.StringUtils;
 import com.newasia.xtoast.XToastUtil;
 import com.xuexiang.xpage.annotation.Page;
 import com.xuexiang.xpage.base.XPageFragment;

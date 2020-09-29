@@ -1,8 +1,7 @@
-package com.newasia.xtableview;
+package com.newasia.xtableviewlib;
 
 import android.content.Context;
 import android.graphics.Color;
-import android.util.Log;
 import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.View;
@@ -10,7 +9,6 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import java.lang.ref.SoftReference;
 import java.util.ArrayList;
 import java.util.Hashtable;
 import java.util.List;

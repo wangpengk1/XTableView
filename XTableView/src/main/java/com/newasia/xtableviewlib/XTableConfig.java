@@ -1,4 +1,4 @@
-package com.newasia.xtableview;
+package com.newasia.xtableviewlib;
 
 import java.util.ArrayList;
 
