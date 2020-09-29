@@ -1,0 +1,12 @@
+[
+  {
+    "name": "统计详情",
+    "classPath": "com.newasia.xtableview.pager.TablePagerContainer",
+    "params": ""
+  },
+  {
+    "name": "表格详情",
+    "classPath": "com.newasia.xtableview.pager.TablePage",
+    "params": ""
+  }
+]
