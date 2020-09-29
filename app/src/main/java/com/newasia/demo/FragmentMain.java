@@ -1,6 +1,5 @@
 package com.newasia.demo;
 
-import com.newasia.xtableviewlib.demo.R;
 import com.newasia.xtableviewlib.pager.TablePage;
 import com.xuexiang.xpage.annotation.Page;
 import com.xuexiang.xpage.base.XPageFragment;
