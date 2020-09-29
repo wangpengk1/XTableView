@@ -1,2 +1,2 @@
 include ':app',':XTableView'
-rootProject.name = "XTableView"
+rootProject.name = "XTableViewDemo"
