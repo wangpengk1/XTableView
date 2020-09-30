@@ -18,6 +18,7 @@ import gdut.bsx.share2.ShareContentType;
 
 public class ExcleSaveHelper
 {
+    public static String FILE_PROVIDER = "com.newasia.vehimanagement.fileprovider";
     private static final int REQUEST_SHARE_FILE_CODE = 120;
     private ExcelUtil mExcelUtil;
     private String mFileName;
@@ -47,7 +48,6 @@ public class ExcleSaveHelper
             });
         }else {XToastUtil.error("导出功能配置缺失");;resultListener.onResult(titles,datas);}
     }
-
 
 
 
@@ -92,7 +92,7 @@ public class ExcleSaveHelper
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
             uri = FileProvider.getUriForFile(
                     mContext
-                    , "com.newasia.vehimanagement.fileprovider"
+                    , FILE_PROVIDER
                     , exportFile);
         } else {
             uri = Uri.fromFile(exportFile);

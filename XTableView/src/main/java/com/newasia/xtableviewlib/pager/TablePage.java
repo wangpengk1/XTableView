@@ -10,6 +10,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import com.newasia.xtableviewlib.AnimatorGifDlg;
+import com.newasia.xtableviewlib.Excel.ExcleSaveHelper;
 import com.newasia.xtableviewlib.R;
 import com.newasia.xtableviewlib.XTableView;
 import com.newasia.xtableviewlib.utils.AnimatorUtis;
@@ -31,6 +32,9 @@ public class TablePage extends XPageFragment{
     private String mTag = "";
     private ProgressBar mPgBar;
 
+    private String mSheepName;
+    private String mCaption;
+
     @Override
     protected TitleBar initTitleBar() {
         SPUtils.setContext(getContext());
@@ -40,7 +44,6 @@ public class TablePage extends XPageFragment{
             titleBar =  super.initTitleBar();
             return titleBar;
         }else  return null;
-
     }
 
     @Nullable
@@ -57,6 +60,8 @@ public class TablePage extends XPageFragment{
         mStrSql = getArguments().getString("parameter","");
         mTag = getArguments().getString("tag","");
         bHasTitle = getArguments().getBoolean("has_title",true);
+        mSheepName = getArguments().getString("sheep_name","");
+        mCaption = getArguments().getString("caption","");
 
     }
 
@@ -92,6 +97,13 @@ public class TablePage extends XPageFragment{
         ///如果存在标题栏就添加列选择按钮
         if(bHasTitle)
         {
+            mTitleBar.addAction(new TitleBar.ImageAction(R.drawable.excel) {
+                @Override
+                public void performAction(View view) {
+                    AnimatorUtis.scaleClicked(view, v -> saveExcel());
+                }
+            });
+
             mTitleBar.addAction(new TitleBar.ImageAction(R.drawable.column) {
                 @Override
                 public void performAction(View view) {
@@ -103,6 +115,21 @@ public class TablePage extends XPageFragment{
     }
 
 
+    public TablePageAdapter getAdapter()
+    {
+        return mAdapter;
+    }
+
+
+    private void saveExcel()
+    {
+        String fileName = mTitleBar.getCenterText().getText().toString();
+        String sheepName = StringUtils.isEmpty(mSheepName)?fileName:mSheepName;
+        String caption = StringUtils.isEmpty(mCaption)?fileName:mCaption;
+        ExcleSaveHelper helper = new ExcleSaveHelper(getContext(),fileName);
+        helper.appendSheep(sheepName,caption,mAdapter.getTitleList(),mAdapter.getDataList());
+        helper.save();
+    }
 
     public void showColumnChoice()
     {

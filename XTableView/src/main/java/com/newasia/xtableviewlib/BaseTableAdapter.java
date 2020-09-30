@@ -34,6 +34,17 @@ public class BaseTableAdapter implements XTableAdapter {
     }
 
 
+    public ArrayList<String> getTitleList()
+    {
+        return mTitleList;
+    }
+
+
+    public ArrayList<ArrayList<String>> getDataList()
+    {
+        return mDataList;
+    }
+
     public void setDatas(ArrayList<String> titles,ArrayList<ArrayList<String>> datas)
     {
         mTitleList = titles;
