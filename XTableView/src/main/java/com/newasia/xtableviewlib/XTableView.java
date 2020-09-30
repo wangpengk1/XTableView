@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
+import android.widget.LinearLayout;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -114,25 +115,24 @@ public class XTableView extends FrameLayout{
             return;
         }
 
-
-        View headView = mAdapter.getTitleView(0,mBinding.leftHeader);
+        ViewSize maxSize = new ViewSize(0,0);
+        View headView = mAdapter.getTitleView(0,mBinding.leftHeader,maxSize);
         if(headView!=null)
         {
             mBinding.leftHeader.addView(headView);
-            int width = headView.getMinimumWidth();
+            int width = maxSize.getWidth();
             mLeftAdapter.setAdapter(adapter,width);
         }
 
         ArrayList<Integer> widths = new ArrayList<>();
         for(int i=1;i<mAdapter.getColumns();++i)
         {
-            headView = mAdapter.getTitleView(i,mBinding.rightHeader);
+            headView = mAdapter.getTitleView(i,mBinding.rightHeader,maxSize);
             if(headView==null) {widths.add(0); continue;}
-            widths.add(headView.getMinimumWidth());
+            widths.add(maxSize.getWidth());
             mBinding.rightHeader.addView(headView);
         }
         mRightAdapter.setAdapter(adapter,widths);
-
     }
 
 }

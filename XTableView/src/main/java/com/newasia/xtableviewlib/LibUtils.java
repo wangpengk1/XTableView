@@ -1,26 +1,20 @@
 package com.newasia.xtableviewlib;
 
 import android.content.Context;
+import android.util.Size;
 import android.view.View;
 
 class LibUtils
 {
     public static Context s_Context;
 
-    public static int MeasureWidth(View view)
+    public static void MeasureSize(View view, ViewSize size)
     {
         int w = View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED);
         int h = View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED);
         view.measure(w, h);
-        return view.getMeasuredWidth();
-    }
-
-    public static int MeasureHeight(View view)
-    {
-        int w = View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED);
-        int h = View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED);
-        view.measure(w, h);
-        return view.getMeasuredHeight();
+        size.setWidth(view.getMeasuredWidth());
+        size.setHeight(view.getMeasuredHeight());
     }
 
 

@@ -2,6 +2,8 @@ package com.newasia.xtableviewlib;
 
 import android.content.Context;
 import android.graphics.Color;
+import android.text.TextUtils;
+import android.util.Size;
 import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.View;
@@ -63,27 +65,26 @@ public class BaseTableAdapter implements XTableAdapter {
     }
 
     @Override
-    public View getTitleView(int columnPosition,ViewGroup parent) {
+    public View getTitleView(int columnPosition, ViewGroup parent,ViewSize maxSize) {
         int pos = columnPosition;
         if(mFilterMap.size()>0)
         {
             pos = mFilterMap.get(columnPosition);
         }
-
-
         TextView view = new TextView(mContext);
         view.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT));
         int padding = LibUtils.dp2px(mContext,5);
         view.setPadding(padding,padding,padding,padding);
         view.setText(mMaxLenList.get(pos)+"  ");
         view.setGravity(Gravity.CENTER);
+        view.setSingleLine();
+        view.setEllipsize(TextUtils.TruncateAt.END);
         view.setTextSize(TypedValue.COMPLEX_UNIT_DIP,12);
         view.setBackgroundColor(Color.parseColor("#2B9EE3"));
-        int width = LibUtils.MeasureWidth(view);
+        LibUtils.MeasureSize(view,maxSize);
 
-        view.setMinimumWidth(width);
         view.setText(mTitleList.get(pos));
-        view.setLayoutParams(new LinearLayout.LayoutParams(width, ViewGroup.LayoutParams.WRAP_CONTENT));
+        view.setLayoutParams(new LinearLayout.LayoutParams(maxSize.getWidth(), ViewGroup.LayoutParams.WRAP_CONTENT));
         return view;
     }
 
@@ -99,6 +100,8 @@ public class BaseTableAdapter implements XTableAdapter {
         int padding = LibUtils.dp2px(mContext,5);
         view.setPadding(padding,padding,padding,padding);
         ArrayList<String> row = mDataList.get(nRow);
+        view.setSingleLine();
+        view.setEllipsize(TextUtils.TruncateAt.END);
         view.setText(row.get(pos));
         view.setGravity(Gravity.CENTER);
         view.setTextSize(TypedValue.COMPLEX_UNIT_DIP,10);
