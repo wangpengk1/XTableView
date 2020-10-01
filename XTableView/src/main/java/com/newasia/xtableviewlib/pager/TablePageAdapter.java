@@ -53,7 +53,7 @@ public class TablePageAdapter extends BaseTableAdapter
             ArrayList<ArrayList<String>> datas = new ArrayList<>();
             XTableConfig.getEnumDataListener().onGetDate(sql,titles,datas,()->{
 
-                if(titles.size()<=0 || datas.size()<=0) XToastUtil.warning("获取到的数据格式错误!");
+                if(titles.size()<=0 || datas.size()<=0) XToastUtil.warning("未查询到任何数据!");
                 else{
                     setDatas(titles,datas);
                 }
