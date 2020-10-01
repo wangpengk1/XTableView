@@ -61,8 +61,18 @@ public class TablePage extends XPageFragment{
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         if(mRootView!=null){return mRootView;}
-        super.onCreateView(inflater, container, savedInstanceState);
+        return super.onCreateView(inflater, container, savedInstanceState);
+    }
 
+
+
+    @Override
+    protected int getLayoutId() {
+        return R.layout.table_page_layout;
+    }
+
+    @Override
+    protected void initViews() {
         if(titleBar!=null)
         {
             titleBar.setTitle(getArguments().getString("title","表格详情"));
@@ -79,8 +89,10 @@ public class TablePage extends XPageFragment{
                 dlg.cancel();
             });
         }
+    }
 
-
+    @Override
+    protected void initListeners() {
         ///如果存在标题栏就添加列选择按钮
         if(bHasTitle)
         {
@@ -98,25 +110,6 @@ public class TablePage extends XPageFragment{
                 }
             });
         }
-
-        return mRootView;
-    }
-
-
-
-    @Override
-    protected int getLayoutId() {
-        return R.layout.table_page_layout;
-    }
-
-    @Override
-    protected void initViews() {
-
-    }
-
-    @Override
-    protected void initListeners() {
-
     }
 
 
@@ -128,12 +121,15 @@ public class TablePage extends XPageFragment{
 
     private void saveExcel()
     {
-        String fileName = mTitleBar.getCenterText().getText().toString();
-        String sheepName = StringUtils.isEmpty(mSheepName)?fileName:mSheepName;
-        String caption = StringUtils.isEmpty(mCaption)?fileName:mCaption;
-        ExcleSaveHelper helper = new ExcleSaveHelper(getContext(),fileName);
-        helper.appendSheep(sheepName,caption,mAdapter.getTitleList(),mAdapter.getDataList());
-        helper.save();
+        if(mAdapter.getTitleList()!=null && mAdapter.getTitleList().size()>0)
+        {
+            String fileName = mTitleBar.getCenterText().getText().toString();
+            String sheepName = StringUtils.isEmpty(mSheepName)?fileName:mSheepName;
+            String caption = StringUtils.isEmpty(mCaption)?fileName:mCaption;
+            ExcleSaveHelper helper = new ExcleSaveHelper(getContext(),fileName);
+            helper.appendSheep(sheepName,caption,mAdapter.getTitleList(),mAdapter.getDataList());
+            helper.save();
+        }
     }
 
     public void showColumnChoice()
