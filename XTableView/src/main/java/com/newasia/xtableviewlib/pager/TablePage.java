@@ -24,33 +24,25 @@ import com.xuexiang.xpage.utils.TitleBar;
 @Page(name = "表格详情")
 public class TablePage extends XPageFragment{
 
-    private TablePageAdapter mAdapter;
-    private XTableView mTableVIew;
-    private String  mStrSql;
+    protected TablePageAdapter mAdapter;
+    protected XTableView mTableVIew;
+    protected String  mStrSql;
     private TitleBar titleBar;
-    private boolean bHasTitle = true;
-    private String mTag = "";
-    private ProgressBar mPgBar;
+    protected boolean bHasTitle = true;
+    protected String mTag = "";
+    protected ProgressBar mPgBar;
 
-    private String mSheepName;
-    private String mCaption;
+    protected String mSheepName;
+    protected String mCaption;
 
     @Override
     protected TitleBar initTitleBar() {
         SPUtils.setContext(getContext());
         XToastUtil.setContext(getContext());
-        if(bHasTitle)
-        {
-            titleBar =  super.initTitleBar();
+        if (bHasTitle) {
+            titleBar = super.initTitleBar();
             return titleBar;
-        }else  return null;
-    }
-
-    @Nullable
-    @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        if(mRootView!=null){return mRootView;}
-        return super.onCreateView(inflater, container, savedInstanceState);
+        } else return null;
     }
 
 
@@ -65,13 +57,11 @@ public class TablePage extends XPageFragment{
 
     }
 
+    @Nullable
     @Override
-    protected int getLayoutId() {
-        return R.layout.table_page_layout;
-    }
-
-    @Override
-    protected void initViews() {
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        if(mRootView!=null){return mRootView;}
+        super.onCreateView(inflater, container, savedInstanceState);
 
         if(titleBar!=null)
         {
@@ -89,10 +79,7 @@ public class TablePage extends XPageFragment{
                 dlg.cancel();
             });
         }
-    }
 
-    @Override
-    protected void initListeners() {
 
         ///如果存在标题栏就添加列选择按钮
         if(bHasTitle)
@@ -111,7 +98,25 @@ public class TablePage extends XPageFragment{
                 }
             });
         }
-        //////////
+
+        return mRootView;
+    }
+
+
+
+    @Override
+    protected int getLayoutId() {
+        return R.layout.table_page_layout;
+    }
+
+    @Override
+    protected void initViews() {
+
+    }
+
+    @Override
+    protected void initListeners() {
+
     }
 
 
