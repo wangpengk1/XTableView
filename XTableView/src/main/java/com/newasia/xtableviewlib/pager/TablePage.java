@@ -119,7 +119,7 @@ public class TablePage extends XPageFragment{
     }
 
 
-    private void saveExcel()
+    public void saveExcel()
     {
         if(mAdapter.getTitleList()!=null && mAdapter.getTitleList().size()>0)
         {
