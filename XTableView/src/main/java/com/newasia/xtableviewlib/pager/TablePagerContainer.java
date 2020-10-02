@@ -54,8 +54,10 @@ public class TablePagerContainer extends XPageFragment
         }
 
         mBinding = DataBindingUtil.bind(mRootView); if(mBinding==null) return;
-
+        if(mDataList.size()>4)
         mBinding.tabHeader.setTabMode(TabLayout.MODE_SCROLLABLE);
+        else
+            mBinding.tabHeader.setTabMode(TabLayout.MODE_FIXED);
         mBinding.viewPager.setOffscreenPageLimit(0);
 
         if(!mDataList.isEmpty())
